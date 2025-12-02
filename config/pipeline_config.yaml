@@ -1,0 +1,41 @@
+# Pipeline Configuration
+pipeline:
+  name: netflix_etl
+  version: 1.0.0
+  description: Netflix metadata ETL pipeline with automated validation
+
+# Data paths
+data:
+  raw_path: data/raw/
+  staging_path: data/staging/
+  warehouse_path: data/warehouse/
+  
+# Spark configuration
+spark:
+  app_name: NetflixETL
+  master: local[*]
+  executor_memory: 4g
+  driver_memory: 2g
+  shuffle_partitions: 200
+  
+# Validation settings
+validation:
+  fail_on_error: false
+  max_error_rate: 0.01
+  generate_reports: true
+  report_path: data/reports/
+  
+# Warehouse settings
+warehouse:
+  format: parquet
+  compression: snappy
+  partition_by:
+    - release_year
+    - type
+  mode: overwrite
+  
+# Logging
+logging:
+  level: INFO
+  format: json
+  file: logs/pipeline.log
