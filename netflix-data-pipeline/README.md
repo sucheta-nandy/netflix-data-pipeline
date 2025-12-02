@@ -284,7 +284,7 @@ df.filter("is_recent = true").select("title", "release_year").show()
 
 ## 👨‍💻 Author
 
-Created for Netflix job application to demonstrate:
+Created by Sucheta Nandy to demonstrate:
 - Data engineering expertise
 - Apache Spark proficiency
 - Pipeline design and orchestration
@@ -297,4 +297,4 @@ For questions about this pipeline, please reach out through the Netflix applicat
 
 ---
 
-**Built with ❤️ for Netflix | December 2024**
+**Built with ❤️ for Netflix | December 2025**
